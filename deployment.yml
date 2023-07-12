@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wayank-deployment
+  labels:
+    app: wayank-deployment1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wayank-deployment1
+  template:
+    metadata:
+      labels:
+        app: wayank-deployment1
+    spec:
+      containers:
+      - name: wayank-deployment
+        image: 900274675111.dkr.ecr.us-east-1.amazonaws.com/wayank:latest
+        ports:
+        - containerPort: 80
